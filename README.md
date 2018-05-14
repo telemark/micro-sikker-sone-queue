@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/telemark/micro-sikker-sone-queue.svg?branch=master)](https://travis-ci.org/telemark/micro-sikker-sone-queue)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](https://github.com/feross/standard)
+
 # micro-sikker-sone-queue
 
 Microservice for queue
