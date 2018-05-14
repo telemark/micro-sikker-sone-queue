@@ -7,7 +7,7 @@ Microservice for queue
 All API calls needs an Authorization header with valid jwt
 
 ```bash
-$ http GET https://queue.service.io/queue/next Authorization:"Bearer <jwt-token>"
+$ curl -X GET -H "Authorization: Bearer <token>" https://queue.service.io/queue/next
 ```
 
 ### ```PUT /queue```
@@ -15,7 +15,7 @@ $ http GET https://queue.service.io/queue/next Authorization:"Bearer <jwt-token>
 Add a new document to the queue
 
 ```bash
-$ http PUT https://queue.service.io/queue title=Hello description=World Authorization:"Bearer <jwt-token>"
+$ curl -X PUT -H "Authorization: Bearer <token>" -d '{ "title": "Hello", "description": "World!" }' https://queue.service.io/queue
 ```
 
 ### ```GET /queue/next```
@@ -23,7 +23,7 @@ $ http PUT https://queue.service.io/queue title=Hello description=World Authoriz
 Get next document from queue
 
 ```bash
-$ http GET https://queue.service.io/queue/next Authorization:"Bearer <jwt-token>"
+$ curl -X GET -H "Authorization: Bearer <token>" https://queue.service.io/queue/next
 ```
 
 ### ```DELETE /queue/:id```
@@ -31,7 +31,7 @@ $ http GET https://queue.service.io/queue/next Authorization:"Bearer <jwt-token>
 Deletes document from queue
 
 ```bash
-$ http DELETE https://queue.service.io/queue/1234567 Authorization:"Bearer <jwt-token>"
+$ curl -X DELETE -H "Authorization: Bearer <token>" https://queue.service.io/queue/5af938ee51450ae8f3b17e5f
 ```
 
 ## Deployment - ZEIT/Now
