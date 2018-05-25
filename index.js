@@ -28,6 +28,7 @@ router.use(handleUnauthorized)
 router.get('/', handlers.frontpage)
 router.put('/queue', handleQueue.addQueue)
 router.get('/queue/next', handleQueue.getNext)
+router.get('/queue/all', handleQueue.getAll)
 router.delete('/queue/:id', handleQueue.deleteFromQueue)
 
 module.exports = (request, response) => {

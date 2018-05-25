@@ -29,6 +29,14 @@ Get next document from queue
 $ curl -X GET -H "Authorization: Bearer <token>" https://queue.service.io/queue/next
 ```
 
+### ```GET /queue/all```
+
+Get all documents in queue
+
+```bash
+$ curl -X GET -H "Authorization: Bearer <token>" https://queue.service.io/queue/all
+```
+
 ### ```DELETE /queue/:id```
 
 Deletes document from queue
