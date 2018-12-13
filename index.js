@@ -21,7 +21,7 @@ router.use(helmet({
 }))
 
 // JWT
-router.use(jwt({secret: config.JWT_SECRET}).unless({path: ['/']}))
+router.use(jwt({ secret: config.JWT_SECRET }).unless({ path: ['/'] }))
 router.use(handleUnauthorized)
 
 // ROUTES
