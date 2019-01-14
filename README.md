@@ -61,4 +61,3 @@ $ npm run deploy
 
 [MIT](LICENSE)
 
-![Robohash image of micro-sikker-sone-queue](https://robots.kebabstudios.party/micro-sikker-sone-queue.png "Robohash image of micro-sikker-sone-queue")
