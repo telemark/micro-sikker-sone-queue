@@ -1,17 +1,41 @@
 {
+  "version": 2,
   "name": "micro-sikker-sone-queue",
+  "scope": "minelev",
   "alias": [
-    "queue.notater.minelev.no"
+    "queue.notater.minelev.win"
   ],
-  "type": "npm",
-  "dotenv": "production.env",
-  "engines": {
-    "node": ">=10.7.0"
+  "env": {
+    "NODE_ENV": "production",
+    "MONGODB_CONNECTION": "@demo-sikker-queue-db",
+    "MONGODB_COLLECTION": "@demo-sikker-queue-db-collection",
+    "MONGODB_NAME": "@demo-sikker-queue-db-name",
+    "JWT_SECRET": "@demo-sikker-queue-secret",
+    "PAPERTRAIL_HOSTNAME": "demo-sikker-queue",
+    "PAPERTRAIL_HOST": "@tfk-papertrail-host",
+    "PAPERTRAIL_PORT": "@tfk-papertrail-port"
   },
-  "scale": {
-    "bru1": {
-      "min": 1,
-      "max": 1
+  "builds": [
+    {
+      "src": "/README.md",
+      "use": "@now/md"
+    },
+    {
+      "src": "/index.js",
+      "use": "@now/node"
     }
-  }
+  ],
+  "routes": [
+    { "src": "/favicon.ico",
+      "dest": "/static/favicon.ico"
+    },
+    {
+      "src": "/queue/(.*)",
+      "dest": "/index.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/README.html"
+    }
+  ]
 }

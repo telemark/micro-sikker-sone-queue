@@ -45,11 +45,32 @@ Deletes document from queue
 $ curl -X DELETE -H "Authorization: Bearer <token>" https://queue.service.io/queue/5af938ee51450ae8f3b17e5f
 ```
 
+## Development
+
+You'll need the [now-cli](https://zeit.co/now) installed
+
+- clone the repo
+- install dependencies
+- add a `.env` file
+- start the service with now-dev ```$ now dev```
+
+.env
+
+```
+NODE_ENV=development
+MONGODB_CONNECTION=connection-to-a-mongodb-compatible-api
+MONGODB_COLLECTION=notes
+MONGODB_NAME=secure-queue
+JWT_SECRET=whatever-you-want
+PAPERTRAIL_HOST=does-not-matter-in-dev-mode
+PAPERTRAIL_PORT=does-not-matter-in-dev-mode
+PAPERTRAIL_HOSTNAME=does-not-matter-in-dev-mode
+```
+
+
 ## Deployment - ZEIT/Now
 
-Change content of [production.env](production.env) to match your environment.
-
-Change content of now:alias in [package.json](package.json) to match your domains.
+Change content of [now.json](now.json) to match your environment.
 
 Deploy service.
 

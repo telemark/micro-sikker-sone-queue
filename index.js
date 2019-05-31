@@ -6,7 +6,6 @@ const jwt = require('express-jwt')
 const helmet = require('helmet')
 
 // Utilities
-const handlers = require('./lib/handlers')
 const handleQueue = require('./lib/handle-queue')
 const config = require('./config')
 const handleUnauthorized = require('./lib/handle-unauthorized')
@@ -21,11 +20,10 @@ router.use(helmet({
 }))
 
 // JWT
-router.use(jwt({ secret: config.JWT_SECRET }).unless({ path: ['/'] }))
+router.use(jwt({ secret: config.JWT_SECRET }))
 router.use(handleUnauthorized)
 
 // ROUTES
-router.get('/', handlers.frontpage)
 router.put('/queue', handleQueue.addQueue)
 router.get('/queue/next', handleQueue.getNext)
 router.get('/queue/all', handleQueue.getAll)
