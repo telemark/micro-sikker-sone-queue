@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "micro-sikker-sone-queue",
+  "name": "micro-sikker-sone-queue-demo",
   "scope": "minelev",
   "alias": [
     "queue.notater.minelev.win"
@@ -21,6 +21,10 @@
       "use": "@now/md"
     },
     {
+      "src": "/api/@.js",
+      "use": "@now/node"
+    },
+    {
       "src": "/index.js",
       "use": "@now/node"
     }
@@ -31,11 +35,19 @@
     },
     {
       "src": "/queue",
-      "dest": "/index.js"
+      "dest": "/api/queue-add.js"
+    },
+    {
+      "src": "/queue/next",
+      "dest": "/api/queue-next.js"
+    },
+    {
+      "src": "/queue/all",
+      "dest": "/api/queue-all.js"
     },
     {
       "src": "/queue/(.*)",
-      "dest": "/index.js"
+      "dest": "/api/queue-delete.js"
     },
     {
       "src": "/(.*)",
