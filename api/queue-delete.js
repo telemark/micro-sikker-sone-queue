@@ -1,6 +1,5 @@
-const mongojs = require('mongojs')
-const db = mongojs(process.env.MONGODB_CONNECTION)
-const queue = db.collection(process.env.MONGODB_COLLECTION)
+const { ObjectId } = require('mongodb')
+const mongo = require('../lib/mongo')
 const logger = require('./logger')
 
 function getParams (path) {
@@ -11,21 +10,22 @@ function getParams (path) {
 }
 
 async function deleteFromQueue (request, response) {
+  const db = await mongo()
+  const queue = db.collection(process.env.MONGODB_COLLECTION)
   logger('info', ['api', 'queue-delete', 'deleteFromQueue'])
   const params = getParams(request.url)
   const { id } = params
-  const queueId = mongojs.ObjectId(id)
+  const queueId = ObjectId(id)
   logger('info', ['api', 'queue-delete', 'deleteFromQueue', 'id', id])
-  queue.remove({ _id: queueId }, (error, result) => {
-    if (error) {
-      logger('error', ['api', 'queue-delete', 'deleteFromQueue', 'id', id, error])
-      response.status(500)
-      response.send(error)
-    } else {
-      logger('info', ['api', 'queue-delete', 'deleteFromQueue', 'id', id, 'deleted'])
-      response.json(result)
-    }
-  })
+  try {
+    const result = await queue.deleteOne({ _id: queueId })
+    logger('info', ['api', 'queue-delete', 'deleteFromQueue', 'id', id, 'deleted'])
+    response.json(result)
+  } catch (error) {
+    logger('error', ['api', 'queue-delete', 'deleteFromQueue', 'id', id, error])
+    response.status(500)
+    response.send(error)
+  }
 }
 
 module.exports = require('../lib/check-token')(deleteFromQueue)
