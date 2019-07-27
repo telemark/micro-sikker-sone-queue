@@ -18,7 +18,7 @@ $ curl -X GET -H "Authorization: Bearer <token>" https://queue.service.io/queue/
 Add a new document to the queue
 
 ```bash
-$ curl -X PUT -H "Authorization: Bearer <token>" -d '{ "title": "Hello", "description": "World!" }' https://queue.service.io/queue
+$ curl -X PUT -H "Authorization: Bearer <token>" --header "Content-Type: application/json" -d '{ "title": "Hello", "description": "World!" }' https://queue.service.io/queue
 ```
 
 ### ```GET /queue/next```
