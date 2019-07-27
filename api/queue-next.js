@@ -1,4 +1,4 @@
-const mongo = require('./mongo')
+const mongo = require('../lib/mongo')
 const logger = require('../lib/logger')
 
 async function getNext (request, response) {

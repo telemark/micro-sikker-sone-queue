@@ -1,6 +1,6 @@
 const { ObjectId } = require('mongodb')
 const mongo = require('../lib/mongo')
-const logger = require('./logger')
+const logger = require('../lib/logger')
 
 function getParams (path) {
   const list = path.split('/')
