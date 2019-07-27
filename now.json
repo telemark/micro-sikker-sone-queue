@@ -1,9 +1,9 @@
 {
   "version": 2,
-  "name": "micro-sikker-sone-queue-demo",
+  "name": "micro-sikker-sone-queue",
   "scope": "minelev",
   "alias": [
-    "queue.notater.minelev.win"
+    "queue.notater.minelev.no"
   ],
   "env": {
     "NODE_ENV": "production",
