@@ -7,11 +7,11 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "MONGODB_CONNECTION": "@sikker-queue-db",
-    "MONGODB_COLLECTION": "@sikker-queue-db-collection",
-    "MONGODB_NAME": "@sikker-queue-db-name",
-    "JWT_SECRET": "@sikker-queue-secret",
-    "PAPERTRAIL_HOSTNAME": "sikker-queue",
+    "MONGODB_CONNECTION": "@demo-sikker-queue-db",
+    "MONGODB_COLLECTION": "@demo-sikker-queue-db-collection",
+    "MONGODB_NAME": "@demo-sikker-queue-db-name",
+    "JWT_SECRET": "@demo-sikker-queue-secret",
+    "PAPERTRAIL_HOSTNAME": "demo-sikker-queue",
     "PAPERTRAIL_HOST": "@tfk-papertrail-host",
     "PAPERTRAIL_PORT": "@tfk-papertrail-port"
   },
