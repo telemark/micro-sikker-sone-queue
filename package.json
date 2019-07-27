@@ -20,7 +20,8 @@
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
     "standard-fix": "standard --fix",
     "deploy": "npm test && now --target production",
-    "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm install",
+    "dev": "echo 'Use now dev to start development environment'"
   },
   "keywords": [
     "microservice",
