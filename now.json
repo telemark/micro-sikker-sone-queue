@@ -7,9 +7,9 @@
   ],
   "env": {
     "NODE_ENV": "production",
-    "MONGODB_CONNECTION": "@sikker-queue-db",
-    "MONGODB_COLLECTION": "@sikker-queue-db-collection",
-    "MONGODB_NAME": "@sikker-queue-db-name",
+    "MONGODB_CONNECTION": "@db-cosmos-prod-connection",
+    "MONGODB_COLLECTION": "notater",
+    "MONGODB_NAME": "minelev",
     "JWT_SECRET": "@sikker-queue-secret",
     "PAPERTRAIL_HOSTNAME": "sikker-queue",
     "PAPERTRAIL_HOST": "@tfk-papertrail-host",
