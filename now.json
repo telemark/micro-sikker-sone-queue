@@ -8,8 +8,8 @@
   "env": {
     "NODE_ENV": "production",
     "MONGODB_CONNECTION": "@db-cosmos-prod-connection",
-    "MONGODB_COLLECTION": "notater",
-    "MONGODB_NAME": "minelev",
+    "MONGODB_COLLECTION": "@db-cosmos-prod-collection-notes-name",
+    "MONGODB_NAME": "@db-cosmos-prod-db-name",
     "JWT_SECRET": "@sikker-queue-secret",
     "PAPERTRAIL_HOSTNAME": "sikker-queue",
     "PAPERTRAIL_HOST": "@tfk-papertrail-host",
