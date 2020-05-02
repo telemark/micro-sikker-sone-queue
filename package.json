@@ -45,7 +45,7 @@
   },
   "dependencies": {
     "jsonwebtoken": "8.5.1",
-    "mongodb": "3.3.2",
+    "mongodb": "3.5.7",
     "winston": "2.4.4",
     "winston-papertrail": "1.0.5"
   }
