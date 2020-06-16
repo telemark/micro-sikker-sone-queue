@@ -38,14 +38,14 @@
   },
   "homepage": "https://github.com/telemark/micro-sikker-sone-queue#readme",
   "devDependencies": {
-    "ava": "3.4.0",
-    "coveralls": "3.0.9",
-    "nyc": "15.0.0",
-    "standard": "14.3.1"
+    "ava": "3.9.0",
+    "coveralls": "3.1.0",
+    "nyc": "15.1.0",
+    "standard": "14.3.4"
   },
   "dependencies": {
     "jsonwebtoken": "8.5.1",
-    "mongodb": "3.3.2",
+    "mongodb": "3.5.9",
     "winston": "2.4.4",
     "winston-papertrail": "1.0.5"
   }
