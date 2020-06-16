@@ -1,0 +1,53 @@
+{
+  "version": 2,
+  "name": "minelev-sikker-sone-queue",
+  "scope": "vtfk",
+  "alias": [
+    "notes.minelev.vtfk.no"
+  ],
+  "env": {
+    "NODE_ENV": "production",
+    "MONGODB_CONNECTION": "@minelev-prod-db-connection",
+    "MONGODB_COLLECTION": "@minelev-prod-db-collection-notes",
+    "MONGODB_NAME": "@minelev-prod-db-name",
+    "JWT_SECRET": "@minelev-prod-sikker-queue-jwt",
+    "PAPERTRAIL_HOSTNAME": "sikker-queue",
+    "PAPERTRAIL_HOST": "@tfk-papertrail-host",
+    "PAPERTRAIL_PORT": "@tfk-papertrail-port"
+  },
+  "builds": [
+    {
+      "src": "/README.md",
+      "use": "@now/md"
+    },
+    {
+      "src": "/api/*.js",
+      "use": "@now/node"
+    }
+  ],
+  "routes": [
+    { "src": "/favicon.ico",
+      "dest": "/static/favicon.ico"
+    },
+    {
+      "src": "/queue",
+      "dest": "/api/queue-add.js"
+    },
+    {
+      "src": "/queue/next",
+      "dest": "/api/queue-next.js"
+    },
+    {
+      "src": "/queue/all",
+      "dest": "/api/queue-all.js"
+    },
+    {
+      "src": "/queue/(.*)",
+      "dest": "/api/queue-delete.js"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/README.html"
+    }
+  ]
+}
